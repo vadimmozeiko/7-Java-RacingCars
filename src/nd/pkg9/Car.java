@@ -36,6 +36,6 @@ public class Car {
 
     public void drive() {
         this.distance += this.currentSpeed;
-        System.out.println("Driving.. " + this.carName +" Current distance: " + this.distance + ", current speed: " + this.currentSpeed);
+//        System.out.println("Driving.. " + this.carName +" Current distance: " + this.distance + ", current speed: " + this.currentSpeed);
     }
 }
