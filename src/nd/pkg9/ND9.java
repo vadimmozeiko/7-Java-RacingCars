@@ -4,36 +4,44 @@ public class ND9 {
 
     public static void main(String[] args) {
 
-        Car car1 = new Car("Mazda", 185);
-        Car car2 = new Car("Honda", 199);
+        Car[] cars = {
+            new Car("Mazda", 177),
+            new Car("Honda", 189),
+            new Car("Toyota", 161),
+            new Car("Ford", 168),
+            new Car("Audi", 207),
+            new Car("BMW", 201),
+            new Car("Volvo", 198),
+            new Car("Volkswagen", 183)
+        };
+        System.out.println();
+        System.out.println("RACE....");
 
-        System.out.println("-------------");
+        int distance = 0;
+        int maxDistance = 1000;
 
-        car1.accelerate(10);
-        car2.accelerate(15);
+        do {
+            for (int i = 0; i < cars.length; i++) {
+                if(Math.random() < 0.5){
+                    cars[i].accelerate((int) (Math.random() * 5 + 1));
+                    cars[i].drive();
+                } else if (Math.random() > 0.5)
+                    cars[i].slowDown((int) (Math.random() * 3 + 1));
+                    cars[i].drive();
+                
+                if (distance < cars[i].distance) {
+                    distance = cars[i].distance;
+                }
+            }
+        } while (distance < maxDistance);
 
-        System.out.println(car1.currentSpeed);
-        System.out.println(car2.currentSpeed);
-
-        car1.slowDown(5);
-        car2.slowDown(7);
-
-        System.out.println(car1.currentSpeed);
-        System.out.println(car2.currentSpeed);
-
-        car1.drive();
-        car2.drive();
-
-        car2.accelerate(300);
-        car2.drive();
-
-        car2.drive();
-
-        car2.slowDown(91);
-         car2.drive();
-
-        car2.slowDown(120);
-         car2.drive();
+        System.out.println();
+        System.out.println("-------- STATISTICS -------- ");
+        System.out.println();
+        for (int i = 0; i < cars.length; i++) {
+            System.out.println(cars[i].carName + " car distance is: " + cars[i].distance + " km");
+            System.out.println();
+        }
 
     }
 
