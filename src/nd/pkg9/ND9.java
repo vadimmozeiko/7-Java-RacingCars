@@ -38,7 +38,7 @@ public class ND9 {
                 }
                 
                 if (cars[i].getDistance() >= checkpoint) {
-                    System.out.println(cars[i].getCarName() + " car distance is: " + cars[i].getDistance() + " km");
+                    System.out.println(cars[i].getCarName() + " car is leading at: " + checkpoint + " km checkpoint");
                     checkpoint+=100;
                 }
 
