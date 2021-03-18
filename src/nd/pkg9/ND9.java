@@ -37,20 +37,20 @@ public class ND9 {
                     cars[i].drive();
                 }
                 
-                if (cars[i].distance >= checkpoint) {
-                    System.out.println(cars[i].carName + " car distance is: " + cars[i].distance + " km");
+                if (cars[i].getDistance() >= checkpoint) {
+                    System.out.println(cars[i].getCarName() + " car distance is: " + cars[i].getDistance() + " km");
                     checkpoint+=100;
                 }
 
-                if (distance < cars[i].distance) {
-                    distance = cars[i].distance;
+                if (distance < cars[i].getDistance()) {
+                    distance = cars[i].getDistance();
                 }
             }
         } while (distance < maxDistance);
 
         for (int i = 0; i < cars.length - 1; i++) {
             for (int j = i + 1; j < cars.length; j++) {
-                if (cars[i].distance< cars[j].distance) {
+                if (cars[i].getDistance()< cars[j].getDistance()) {
                     Car temp = cars[i];
                     cars[i] = cars[j];
                     cars[j] = temp;
@@ -62,7 +62,7 @@ public class ND9 {
         System.out.println("-------- STATISTICS -------- ");
         System.out.println();
         for (int i = 0; i < cars.length; i++) {
-            System.out.println((i + 1) + " - " + cars[i].carName + " car distance is: " + cars[i].distance + " km");
+            System.out.println((i + 1) + " - " + cars[i].getCarName() + " car distance is: " + cars[i].getDistance() + " km");
             System.out.println();
         }
 
