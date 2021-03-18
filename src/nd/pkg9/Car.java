@@ -13,7 +13,7 @@ public class Car {
     }
 
     private void greeting() {
-        System.out.println("Car " + this.carName + ", milage - " + distance + ", max speed - " + maxSpeed + ".");
+        System.out.println("Car " + this.carName + ", milage - " + this.distance + ", max speed - " + this.maxSpeed + ".");
     }
     public void accelerate(int value) {
         if (this.currentSpeed + value > this.maxSpeed) {
