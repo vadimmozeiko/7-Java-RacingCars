@@ -15,7 +15,7 @@ public class SportCar extends Car {
         super.accelerate(value);
         
         if (!spoilerIsUp){
-            this.currentSpeed += value * 1.5;
+            this.currentSpeed += value * 0.5;
         }
         if (this.currentSpeed > this.maxSpeed){
             this.currentSpeed = this.maxSpeed;
