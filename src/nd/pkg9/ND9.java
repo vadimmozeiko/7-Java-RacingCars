@@ -19,6 +19,9 @@ public class ND9 {
             new SportCar("|=Lamborghini", 301),
             new SportCar("|=Porsche", 298)
         };
+        for (int i = 0; i < cars.length; i++) {
+            cars[i].greeting();
+        }
         System.out.println();
         System.out.println("RACE....");
         System.out.println();
@@ -29,16 +32,17 @@ public class ND9 {
 
         do {
             for (int i = 0; i < cars.length; i++) {
-                if (Math.random() > 0.4 && cars[i].isHasSpoiler() == true) {
-                    ((SportCar) cars[i]).setSpoilerIsUp(true);
-                }
-                if (Math.random() < 0.4 && cars[i].isHasSpoiler() == true) {
-                    ((SportCar) cars[i]).setSpoilerIsUp(false);
+                if (cars[i].isHasSpoiler()) {
+                    if (Math.random() > 0.4) {
+                        ((SportCar) cars[i]).setSpoilerIsUp(true);
+                    } else {
+                        ((SportCar) cars[i]).setSpoilerIsUp(false);
+                    }
                 }
                 if (Math.random() < 0.5) {
                     cars[i].accelerate((int) (Math.random() * 5 + 1));
                     cars[i].drive();
-                } else if (Math.random() > 0.5) {
+                } else {
                     cars[i].slowDown((int) (Math.random() * 3 + 1));
                     cars[i].drive();
                 }
