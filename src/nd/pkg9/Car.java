@@ -3,7 +3,7 @@ package nd.pkg9;
 public class Car {
     private String carName;
     private int maxSpeed;
-    private int currentSpeed = 0;
+    protected double currentSpeed = 0;
     private int distance = 0;
 
     public Car(String name, int maxSpeed) {
@@ -38,7 +38,7 @@ public class Car {
         return carName;
     }
 
-    public int getCurrentSpeed() {
+    public double getCurrentSpeed() {
         return currentSpeed;
     }
 
