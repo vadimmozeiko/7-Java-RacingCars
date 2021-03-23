@@ -5,17 +5,18 @@ package nd.pkg9;
 public class SportCar extends Car {
     
    private boolean spoilerIsUp = false;
+   private boolean hasSpoiler = true;
     
     public SportCar(String name, int maxSpeed) {
         super(name, maxSpeed);
-        boolean hasSpoiler = true;
+        hasSpoiler = true;
     }
     
     public void accelerate(int value){
         super.accelerate(value);
         
         if (!spoilerIsUp){
-            this.currentSpeed *= 1.5;
+            this.currentSpeed += value * 1.5;
         }
         if (this.currentSpeed > this.maxSpeed){
             this.currentSpeed = this.maxSpeed;
@@ -45,6 +46,11 @@ public class SportCar extends Car {
     public void setSpoilerIsUp(boolean spoilerIsUp) {
         this.spoilerIsUp = spoilerIsUp;
     }
+
+    public boolean isHasSpoiler() {
+        return hasSpoiler;
+    }
+
     
     
     

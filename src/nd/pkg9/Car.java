@@ -5,6 +5,7 @@ public class Car {
     protected int maxSpeed;
     protected double currentSpeed = 0;
     private int distance = 0;
+    private boolean hasSpoiler = false;
 
     public Car(String name, int maxSpeed) {
         this.carName = name;
@@ -44,5 +45,9 @@ public class Car {
 
     public int getDistance() {
         return distance;
+    }
+
+    public boolean isHasSpoiler() {
+        return hasSpoiler;
     }
 }
