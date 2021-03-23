@@ -15,7 +15,10 @@ public class SportCar extends Car {
         super.accelerate(value);
         
         if (!spoilerIsUp){
-            this.currentSpeed += (value * 1.5);
+            this.currentSpeed *= 1.5;
+        }
+        if (this.currentSpeed > this.maxSpeed){
+            this.currentSpeed = this.maxSpeed;
         }
     }
     
@@ -23,8 +26,24 @@ public class SportCar extends Car {
         super.slowDown(value);
         
         if (spoilerIsUp){
-           this.currentSpeed -= (value * 2); 
+           this.currentSpeed -= value; 
+        } 
+        if (this.currentSpeed < 0){
+            this.currentSpeed = 0;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "SportCar " + getCarName() +", spoilerIsUp = " + spoilerIsUp + ", current speed: "  + getCurrentSpeed();
+    }
+
+    public boolean isSpoilerIsUp() {
+        return spoilerIsUp;
+    }
+
+    public void setSpoilerIsUp(boolean spoilerIsUp) {
+        this.spoilerIsUp = spoilerIsUp;
     }
     
     

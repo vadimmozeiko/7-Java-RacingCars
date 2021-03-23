@@ -2,7 +2,7 @@ package nd.pkg9;
 
 public class Car {
     private String carName;
-    private int maxSpeed;
+    protected int maxSpeed;
     protected double currentSpeed = 0;
     private int distance = 0;
 
